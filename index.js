@@ -28,28 +28,28 @@ class CountdownTimer {
   };
 
   getNumbers = () => {
-    let date = new Date();
-    let secs = this.getSeconds(date);
-    let mins = this.getMinutes(date);
-    let hours = this.getHours(date);
-    let days = this.getDays(date);
+    const date = new Date();
+    const secs = this.getSeconds(date);
+    const mins = this.getMinutes(date);
+    const hours = this.getHours(date);
+    const days = this.getDays(date);
     return {secs, mins, hours, days}
   }
 
   getValues = () => {
 
-    let numbers = this.getNumbers();
-    let secsPlace = numbers.secs < 10 ? `0${numbers.secs}` : `${numbers.secs}`;
-    let minsPlace = numbers.mins < 10 ? `0${numbers.mins}` : `${numbers.mins}`;
-    let hoursPlace = numbers.hours < 10 ? `0${numbers.hours}` : `${numbers.hours}`;
-    let number1 = this.initialNumOfDays.toString().length;
-    let number2 = numbers.days.toString().length;
-    let daysPlace = `${'0'.repeat(number1-number2)}${numbers.days}`;
+    const numbers = this.getNumbers();
+    const secsPlace = numbers.secs < 10 ? `0${numbers.secs}` : `${numbers.secs}`;
+    const minsPlace = numbers.mins < 10 ? `0${numbers.mins}` : `${numbers.mins}`;
+    const hoursPlace = numbers.hours < 10 ? `0${numbers.hours}` : `${numbers.hours}`;
+    const number1 = this.initialNumOfDays.toString().length;
+    const number2 = numbers.days.toString().length;
+    const daysPlace = `${'0'.repeat(number1-number2)}${numbers.days}`;
     return {secsPlace, minsPlace, hoursPlace, daysPlace}
   }
 
   reflectInitialDate = () => {
-    let values = this.getValues();
+    const values = this.getValues();
     document.querySelector(`${this.selector} span[data-value="secs"]`).textContent = values.secsPlace;
     document.querySelector(`${this.selector} span[data-value="mins"]`).textContent = values.minsPlace;
     document.querySelector(`${this.selector} span[data-value="hours"]`).textContent = values.hoursPlace;
@@ -57,8 +57,8 @@ class CountdownTimer {
   }
 
   reflectTime = () => {
-    let numbers = this.getNumbers();
-    let values = this.getValues();
+    const numbers = this.getNumbers();
+    const values = this.getValues();
 
     document.querySelector(`${this.selector} span[data-value="secs"]`).textContent = values.secsPlace;
 
@@ -87,6 +87,7 @@ class CountdownTimer {
 const countdownTimer = new CountdownTimer({
   selector: "#timer-1",
   targetDate: new Date("September 28, 2021")
+
 });
 
 countdownTimer.reflectInitialDate();
