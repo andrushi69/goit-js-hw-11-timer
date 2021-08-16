@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    color: palevioletred;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+
+}
+
+.field {
+    background-color: palevioletred;
+    width: 20%;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 30px;
+    color: white;
+}
